@@ -1,4 +1,4 @@
-import { SearchBar, Button, WhiteSpace, WingBlank } from 'antd-mobile';
+import { SearchBar } from 'antd-mobile';
 import React, {Component} from 'react'
 
 // TODO:Note 1

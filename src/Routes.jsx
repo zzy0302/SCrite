@@ -15,7 +15,6 @@ const router = App => (
             <Route path="/" exact component={Home} />
             <Route path="/view" exact component={View} />
             <Route path="/publish" exact component={PublishItemWrapper} />
-            // TODO
             <Route path="/follow" component={FollowItemWrapper}/>
             <Route path="/world" component={WorldView}/>
 

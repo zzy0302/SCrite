@@ -1,0 +1,15 @@
+.category-drawer {
+    margin-top: 90px;
+    position: relative;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.category-drawer .am-drawer-sidebar {
+    background-color: #fff;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.category-drawer .am-drawer-sidebar .am-list {
+    width: 200px;
+    padding: 0;
+}

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Home from './Containers/Home'
 import Routes from './Routes'
 
 class App extends Component {

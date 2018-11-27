@@ -75,13 +75,13 @@ class Follow extends Component{
             .then(current => {
                 const tx = {
                     ...transaction,
-                    from:window.neuron.getAccount(),
+
                     validUntilBlock: +current + 88,
                 };
                 // this.setState({
                 //     submitText: submitTexts.submitting,
                 // });
-                console.log("add account" + window.neuron.getAccount())
+
                 var that = this;
                 simpleStoreContract.methods.addACommentFromMe(title ,contents, category, province, district, street,
                     +time).send(tx, function(err, res) {

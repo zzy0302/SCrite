@@ -50,7 +50,6 @@ class Demo extends React.Component {
 
 
     getData(){
-        const from = window.neuron.getAccount();
         simpleStoreContract.methods
             .getUserContentsForThisUser()
             .call({
@@ -59,7 +58,8 @@ class Demo extends React.Component {
             .then(times => {
                 // alert(JSON.stringify(times, null, 2))
                 times.reverse()
-                console.log('list account' + window.neuron.getAccount())
+                console.log('list account' + )
+                //TODO:here account
                 return Promise.all(times.map(time => simpleStoreContract.methods.getACommentOfMine(time).call({ from })))
             })
             .then((pack) => {

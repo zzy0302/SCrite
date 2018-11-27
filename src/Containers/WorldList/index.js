@@ -49,7 +49,6 @@ class World extends React.Component {
 
 
     getData(){
-        const from = window.neuron.getAccount();
         simpleStoreContract.methods
             .getWorldWideLength()
             .call({
@@ -62,7 +61,7 @@ class World extends React.Component {
                     indexes.push(i);
                 }
                 // alert(JSON.stringify(times, null, 2))
-                console.log('list account' + window.neuron.getAccount())
+
                 return Promise.all(indexes.map(index => simpleStoreContract.methods.getWorldWideOneByOne(index).call({ from })))
             })
             .then((pack) => {
@@ -76,13 +75,7 @@ class World extends React.Component {
                 console.error(err)
             })
     }
-    //
-    // rendersmall(e){
-    //     alert(JSON.stringify(e, null, 2));
-    //     return (
-    //         <Item>{e}</Item>
-    //     );
-    // }
+
 
     render() {
 

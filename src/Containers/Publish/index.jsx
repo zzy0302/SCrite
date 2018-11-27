@@ -6,7 +6,7 @@ import { createForm } from 'rc-form';
 import {category,dict} from '../../Data/Category'
 import testMap from '../../Map.png'
 import './publish.css'
-import nervos from '../../nervos'
+
 import { transaction, simpleStoreContract } from '../../simpleStore'
 
 
@@ -37,40 +37,7 @@ class Publish extends Component{
         const district = '杨浦';
         const street = '四平路';
         const time = new Date();
-        if(category && title && contents && province && district && street && street && time){
-            nervos.appchain
-                .getBlockNumber()
-                .then(current => {
-                    const tx = {
-                        ...transaction,
-                        from:window.neuron.getAccount(),
-                        validUntilBlock: +current + 88,
-                    };
-                    // this.setState({
-                    //     submitText: submitTexts.submitting,
-                    // });
-                    console.log("add account" + window.neuron.getAccount())
-                    simpleStoreContract.methods.addACommentFromMe(title ,contents, category, province, district, street,
-                        +time).send(tx, function(err, res) {
-                        if (res) {
-                            nervos.listeners.listenToTransactionReceipt(res)
-                                .then(receipt => {
-                                    if (!receipt.errorMessage) {
 
-                                        alert("hello");
-                                    } else {
-                                        throw new Error(receipt.errorMessage)
-                                    }
-                                })
-                        } else {
-
-                        }
-                    })
-                })
-        }
-        else{
-            alert("You have forgot something!");
-        }
 
     };
 

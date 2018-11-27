@@ -11,4 +11,3 @@ const simpleStoreContract = new nervos.appchain.Contract(abi, contractAddress);
 module.exports = {
     transaction,
     simpleStoreContract
-}
